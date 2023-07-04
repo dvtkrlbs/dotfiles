@@ -1,0 +1,18 @@
+path=(/opt/homebrew/bin $path)
+path=(/Users/dvtkrlbs/go/bin $path)
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+eval "$(starship init zsh)"
+eval "$(fnm env)"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias youtube-dl="yt-dlp"
+alias yubikey-gpg-reset="gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
+
+export EDITOR = nvim
+
+export SSH_AUTH_SOCK="$(brew --prefix)/var/run/yubikey-agent.sock"
+
+
+export PATH="$(brew --prefix python@3.10)/bin:$PATH"
+export PATH="$(brew --prefix openssh)/bin:$PATH"
+export PATH="~/.rye/shims:$PATH"
+
