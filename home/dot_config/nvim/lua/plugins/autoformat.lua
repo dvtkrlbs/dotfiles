@@ -2,7 +2,7 @@
 --
 -- Use your language server to automatically format your code on save.
 -- Adds additional commands as well to manage the behavior
-if vim.g.vscode then
+if !vim.g.vscode then
   return {
     'neovim/nvim-lspconfig',
     config = function()

@@ -7,7 +7,7 @@ alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias youtube-dl="yt-dlp"
 alias yubikey-gpg-reset="gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
 
-export EDITOR = nvim
+export EDITOR=nvim
 
 export SSH_AUTH_SOCK="$(brew --prefix)/var/run/yubikey-agent.sock"
 
