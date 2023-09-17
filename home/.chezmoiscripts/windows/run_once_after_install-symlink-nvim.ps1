@@ -1,0 +1,1 @@
+gsudo { cmd /c mklink /d $env:LOCALAPPDATA\nvim $env:USERPROFILE\.config\nvim }
