@@ -1,0 +1,12 @@
+{{- if eq .chezmoi.os "darwin" }}
+Include ~/.orbstack/ssh/config
+{{- end }}
+
+Host *
+	IgnoreUnknown UseKeychain
+	UseKeychain yes
+	AddKeysToAgent yes
+	IdentityFile ~/.ssh/id_ed25519
+	IdentityFile ~/.ssh/id_ed25519_sk
+	IdentityFile ~/.ssh/id_ed25519_sk_backup
+	ServerAliveInterval 240
