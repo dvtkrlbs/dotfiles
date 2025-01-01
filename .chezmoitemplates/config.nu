@@ -61,7 +61,6 @@ path add $env.GOBIN
 
 source ~/.cache/carapace/init.nu
 
-$env.OP_SESSION = ^op signin --raw | str trim
 
 
 use ~/.cache/starship/init.nu
