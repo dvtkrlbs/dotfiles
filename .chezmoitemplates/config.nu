@@ -51,11 +51,13 @@ $env.HOMEBREW_REPOSITORY = "/home/linuxbrew/.linuxbrew/Homebrew"
 path add "/home/linuxbrew/.linuxbrew/bin"
 path add "/home/linuxbrew/.linuxbrew/sbin"
 
+{{ if ne .chezmoi.os "windows" }}
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
 $env.GOROOT = $env.HOMEBREW_CELLAR | path join "go/1.23.4/libexec"
 
 path add $env.GOBIN
+{{ end }}
 
 source ~/.cache/carapace/init.nu
 
