@@ -764,6 +764,7 @@ require('lazy').setup({
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      --- @diagnostic disable-next-line: missing-fields
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -929,6 +930,7 @@ require('lazy').setup({
         'query',
         'vim',
         'vimdoc',
+        'rust',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
