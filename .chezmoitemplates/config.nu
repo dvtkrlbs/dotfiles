@@ -42,22 +42,29 @@ $env.config = {
   edit_mode: vi
 }
 
-
-
-$env.HOMEBREW_PREFIX = "/home/linuxbrew/.linuxbrew"
+{{- if eq .chezmoi.os "linux" }}
+$env.HOMEBREW_PREFIX = "/home/linuxbrew/.linuxbrew/opt"
 $env.HOMEBREW_CELLAR = "/home/linuxbrew/.linuxbrew/Cellar"
 $env.HOMEBREW_REPOSITORY = "/home/linuxbrew/.linuxbrew/Homebrew"
+{{- end }}
 
-path add "/home/linuxbrew/.linuxbrew/bin"
-path add "/home/linuxbrew/.linuxbrew/sbin"
+{{- if eq .chezmoi.os "darwin" }}
+$env.HOMEBREW_PREFIX = "/opt/homebrew/opt"
+$env.HOMEBREW_CELLAR = "/opt/homebrew/Cellar"
+$env.HOMEBREW_REPOSITORY = "/opt/homebrew"
+{{- end }}
 
-{{ if ne .chezmoi.os "windows" }}
+path add ($env.HOMEBREW_PREFIX | path join "go")
+path add ($env.HOMEBREW_PREFIX | path dirname | path join "bin")
+path add ($env.HOMEBREW_PREFIX | path dirname | path join "sbin")
+
+{{- if ne .chezmoi.os "windows" }}
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
 $env.GOROOT = $env.HOMEBREW_CELLAR | path join "go/1.23.4/libexec"
 
 path add $env.GOBIN
-{{ end }}
+{{- end }}
 
 source ~/.cache/carapace/init.nu
 

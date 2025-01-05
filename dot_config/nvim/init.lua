@@ -156,6 +156,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.keymap.set('n', '<space>x', ':.lua<CR>')
+vim.keymap.set('v', '<space>x', ':lua<CR>')
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -956,6 +959,18 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    config = function()
+      require('oil').setup()
+    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
