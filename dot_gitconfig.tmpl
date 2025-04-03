@@ -2,7 +2,10 @@
 	email = dvt.tnhn.krlbs@icloud.com
 	name = Tunahan Karlibas
 	signingkey = 5742A2F09907897C4475AB698185D2835AAFC00A
+
+{{- if ne .chezmoi.hostname "BEAST-WSL" }}
 [commit]
 	gpgsign = true
 [tag]
 	gpgsign = true
+{{- end }}
