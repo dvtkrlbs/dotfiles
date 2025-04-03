@@ -11,4 +11,6 @@ Library/*
 {{ if ne .chezmoi.os "windows" }}
 AppData/*
 AppData/
+Documents/
+Documents/*
 {{ end }}
