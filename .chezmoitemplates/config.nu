@@ -34,10 +34,10 @@ $env.config = {
     }
   }
 
-  filesize: {
-    metric: true # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
-    format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
-  }
+  # filesize: {
+  #   metric: true # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
+  #   format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
+  # }
 
   edit_mode: vi
 }
@@ -46,6 +46,7 @@ $env.config = {
 $env.HOMEBREW_PREFIX = "/home/linuxbrew/.linuxbrew/opt"
 $env.HOMEBREW_CELLAR = "/home/linuxbrew/.linuxbrew/Cellar"
 $env.HOMEBREW_REPOSITORY = "/home/linuxbrew/.linuxbrew/Homebrew"
+
 {{- end }}
 
 {{- if eq .chezmoi.os "darwin" }}
@@ -54,11 +55,13 @@ $env.HOMEBREW_CELLAR = "/opt/homebrew/Cellar"
 $env.HOMEBREW_REPOSITORY = "/opt/homebrew"
 {{- end }}
 
+
+
+{{- if ne .chezmoi.os "windows" }}
 path add ($env.HOMEBREW_PREFIX | path join "go")
 path add ($env.HOMEBREW_PREFIX | path dirname | path join "bin")
 path add ($env.HOMEBREW_PREFIX | path dirname | path join "sbin")
 
-{{- if ne .chezmoi.os "windows" }}
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
 $env.GOROOT = $env.HOMEBREW_CELLAR | path join "go/1.23.4/libexec"
