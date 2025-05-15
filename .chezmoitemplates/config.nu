@@ -64,7 +64,7 @@ path add ($env.HOMEBREW_PREFIX | path dirname | path join "sbin")
 
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
-$env.GOROOT = $env.HOMEBREW_CELLAR | path join "go/1.23.4/libexec"
+$env.GOROOT = $env.HOMEBREW_CELLAR | path join "go/1.23.5/libexec"
 
 path add $env.GOBIN
 {{- end }}
