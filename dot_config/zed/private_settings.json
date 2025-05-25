@@ -1,0 +1,33 @@
+{
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gemini-2.5-pro"
+    },
+    "version": "2"
+  },
+  "show_edit_predictions": true,
+  "buffer_font_family": "JetBrains Mono",
+  "theme": "Catppuccin Mocha",
+  "icon_theme": "Catppuccin Mocha",
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "vim_mode": true,
+  "lsp": {
+    "rust-analyzer": {
+      "cargo": {
+        "buildScripts": {
+          "enable": true
+        }
+      }
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "inlay_hints": {
+    "enabled": true
+  }
+}
