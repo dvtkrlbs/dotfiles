@@ -44,3 +44,15 @@ font-family = Jetbrains Mono
 theme = catppuccin-mocha.conf
 alpha-blending = native
 background-opacity = 0.6
+
+# resize splits
+keybind = super+ctrl+shift+h=resize_split:left,10
+keybind = super+ctrl+shift+j=resize_split:down,10
+keybind = super+ctrl+shift+k=resize_split:up,10
+keybind = super+ctrl+shift+l=resize_split:right,10
+
+# move between splits
+keybind = ctrl+alt+h=goto_split:left  
+keybind = ctrl+alt+j=goto_split:down  
+keybind = ctrl+alt+k=goto_split:up  
+keybind = ctrl+alt+l=goto_split:right  
