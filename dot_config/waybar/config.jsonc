@@ -76,7 +76,7 @@
         "format": "{volume}% {icon}",
         "format-muted": "",
 //        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click": "pavucontrol",
+        "on-click": "ghostty --class=my.wiremix -e wiremix",
         "format-icons": ["", "", ""]
     },
     // Modules configuration
