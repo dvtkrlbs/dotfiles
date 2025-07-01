@@ -43,7 +43,7 @@ font-family = Jetbrains Mono
 # resize-overlay-duration = 4s 200ms
 theme = catppuccin-mocha.conf
 alpha-blending = native
-background-opacity = 0.6
+background-opacity = 0.8
 
 # resize splits
 keybind = super+ctrl+shift+h=resize_split:left,10

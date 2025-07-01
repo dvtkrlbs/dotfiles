@@ -1,0 +1,9 @@
+[Unit]
+Description=Mail Sync high frequency timer
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1m
+
+[Install]
+WantedBy=default.target
