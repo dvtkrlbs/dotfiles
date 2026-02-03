@@ -3,10 +3,8 @@ Include ~/.orbstack/ssh/config
 {{- end }}
 
 Host *
-	IgnoreUnknown UseKeychain
-	UseKeychain yes
-	AddKeysToAgent yes
-	IdentityFile ~/.ssh/id_ed25519
+	IdentityAgent ~/.1password/agent.sock
 	IdentityFile ~/.ssh/id_ed25519_sk
 	IdentityFile ~/.ssh/id_ed25519_sk_backup
 	ServerAliveInterval 240
+
