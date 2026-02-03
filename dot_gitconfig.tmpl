@@ -1,5 +1,10 @@
 [core]
 	editor = nvim
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+	sshCommand = ssh.exe
+{{   end }}
+{{ end }}	
 [user]
 	email = dvt.tnhn.krlbs@icloud.com
 	name = Tunahan Karlibas
