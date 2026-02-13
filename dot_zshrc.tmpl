@@ -1,0 +1,27 @@
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+alias youtube-dl="yt-dlp"
+alias yubikey-gpg-reset="gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
+
+export EDITOR=nvim
+
+. "$HOME/.cargo/env"
+. "$HOME/.local/bin/env"
+
+{{- if eq .chezmoi.os "darwin" }}
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/dvtkrlbs/go/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$(brew --prefix python@3.10)/bin:$PATH"
+export PATH="$(brew --prefix openssh)/bin:$PATH"
+{{- end }}
+
+# Atuin
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+eval "$(starship init zsh)"
