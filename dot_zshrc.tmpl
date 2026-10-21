@@ -1,3 +1,9 @@
+autoload -U compinit
+
+compinit
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 alias youtube-dl="yt-dlp"
 alias yubikey-gpg-reset="gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
 
