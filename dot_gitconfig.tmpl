@@ -1,20 +1,14 @@
 [core]
 	editor = nvim
-	sshCommand = ssh.exe
+{{- if eq .chezmoi.os "windows" }}
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+{{- end }}
 	
 [user]
 	email = dvt.tnhn.krlbs@icloud.com
 	name = Tunahan Karlibas
 	signingkey = 5742A2F09907897C4475AB698185D2835AAFC00A
 
-{{- if eq .chezmoi.os "windows" }}
-[gpg]
-	program = "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
-{{- end }}
-#[commit]
-#	gpgsign = true
-#[tag]
-#	gpgsign = true
 [init]
 	defaultBranch = main
 [push]

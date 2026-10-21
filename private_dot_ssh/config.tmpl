@@ -6,7 +6,9 @@ Host bastion.metapic.dev
 	ProxyCommand cloudflared access ssh --hostname %h
 
 Host *
+{{- if ne .chezmoi.os "windows" }}
 	IdentityAgent ~/.1password/agent.sock
+{{ end }}
 	IdentityFile ~/.ssh/id_ed25519
 	IdentityFile ~/.ssh/id_ed25519_sk
 	IdentityFile ~/.ssh/id_ed25519_sk_backup
