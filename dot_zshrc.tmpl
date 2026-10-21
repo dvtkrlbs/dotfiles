@@ -2,8 +2,15 @@ autoload -U compinit
 
 compinit
 
+{{- if eq .chezmoi.os "darwin" }}
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+{{- else }}
 fpath=(/usr/local/share/zsh-completions $fpath)
+{{ end }}
 
+{{- if eq .chezmoi.os "darwin" }}
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+{{ end }}
 alias youtube-dl="yt-dlp"
 alias yubikey-gpg-reset="gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
 
@@ -24,7 +31,7 @@ export PATH="$(brew --prefix python@3.10)/bin:$PATH"
 export PATH="$(brew --prefix openssh)/bin:$PATH"
 {{- end }}
 
-# Atuin
+. "$HOME/.cargo/env"
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
