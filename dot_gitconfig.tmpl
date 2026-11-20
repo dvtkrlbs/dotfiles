@@ -1,3 +1,6 @@
+[include]
+	path = .config/delta/themes/catppuccin.gitconfig
+	
 [core]
 	editor = nvim
 {{- if eq .chezmoi.os "windows" }}
@@ -11,5 +14,9 @@
 
 [init]
 	defaultBranch = main
+
 [push]
 	autoSetupRemote = true
+
+[delta]
+	features = catppuccin-mocha

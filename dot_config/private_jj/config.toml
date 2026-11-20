@@ -1,0 +1,10 @@
+[user]
+name = "Tunahan Karlibas"
+email = "dvt.tnhn.krlbs@icloud.com"
+
+[ui]
+pager = "delta"
+diff-formatter = ":git"
+
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
