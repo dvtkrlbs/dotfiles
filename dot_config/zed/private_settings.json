@@ -1,7 +1,20 @@
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
   "diff_view_style": "unified",
   "cli_default_open_behavior": "existing_window",
   "terminal": {
+    "dock": "bottom",
     "font_size": 13.0
   },
   "git": {
@@ -14,7 +27,8 @@
   },
   "context_servers": {},
   "agent": {
-    "default_profile": "ask",
+    "dock": "right",
+    "default_profile": "write",
     "model_parameters": [],
     "default_model": {
       "provider": "openai-subscribed",
